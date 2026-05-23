@@ -5,6 +5,9 @@ on:
     branches: [main, development]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
   pages: write
@@ -22,7 +25,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
 
       - run: npm ci
@@ -30,10 +33,10 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io', github.repository_owner) }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: ./out
 

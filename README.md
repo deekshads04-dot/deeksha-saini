@@ -55,13 +55,16 @@ sections: ["hero", "achievements", "instagramReels", "blogs"]
 
 ## GitHub Pages deployment
 
-1. Copy `.env.example` to `.env.local` and set:
-   - `NEXT_PUBLIC_SITE_URL` — your Pages URL
-   - `NEXT_PUBLIC_BASE_PATH` — `/your-repo-name` for project sites (empty for custom domains)
+1. **Enable Pages (required once):** [Settings → Pages](https://github.com/me4abhi/deeksha-saini/settings/pages) → **Build and deployment** → **Source:** **GitHub Actions**.  
+   If this is still set to “Deploy from a branch”, the deploy job fails with `404` / “Failed to create deployment”.
 
-2. Push to `main` or `development` — the included GitHub Action builds and deploys `out/`.
+2. Copy `.env.example` to `.env.local` and set:
+   - `NEXT_PUBLIC_SITE_URL` — e.g. `https://me4abhi.github.io/deeksha-saini`
+   - `NEXT_PUBLIC_BASE_PATH` — `/deeksha-saini` for project sites (empty for custom domains)
 
-3. In repo **Settings → Pages**, set source to **GitHub Actions**.
+3. Push to `main` or `development` — the GitHub Action builds `out/` and deploys via `actions/deploy-pages`.
+
+4. Optional: repo variable `SITE_URL` overrides the default Pages URL in CI.
 
 ## Build
 
