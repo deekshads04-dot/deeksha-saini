@@ -55,16 +55,22 @@ sections: ["hero", "achievements", "instagramReels", "blogs"]
 
 ## GitHub Pages deployment
 
-1. **Enable Pages (required once):** [Settings → Pages](https://github.com/me4abhi/deeksha-saini/settings/pages) → **Build and deployment** → **Source:** **GitHub Actions**.  
-   If this is still set to “Deploy from a branch”, the deploy job fails with `404` / “Failed to create deployment”.
+### Root URL (`https://username.github.io/`)
 
-2. Copy `.env.example` to `.env.local` and set:
-   - `NEXT_PUBLIC_SITE_URL` — e.g. `https://deekshads04-dot.github.io/deeksha-saini`
-   - `NEXT_PUBLIC_BASE_PATH` — `/deeksha-saini` for project sites (empty for custom domains). Use plain paths in `<Link href="/blog/">`; Next.js adds the base path once.
+GitHub only serves a site at the **account root** when the repository is named **`username.github.io`** (for example `deekshads04-dot.github.io`). A repo named `deeksha-saini` is always published at `https://username.github.io/deeksha-saini/`.
 
-3. Push to `main` or `development` — the GitHub Action builds `out/` and deploys via `actions/deploy-pages`.
+1. Rename the repo to **`deekshads04-dot.github.io`** (Settings → General → Repository name).
+2. **Settings → Pages** → **Source:** **GitHub Actions**.
+3. Copy `.env.example` to `.env.local`:
+   - `NEXT_PUBLIC_SITE_URL=https://deekshads04-dot.github.io`
+   - `NEXT_PUBLIC_BASE_PATH=` (empty)
+4. Push to `main` or `development` — CI detects a user site and builds without a base path.
 
-4. Optional: repo variable `SITE_URL` overrides the default Pages URL in CI.
+Optional repo variables: `SITE_URL`, `BASE_PATH` (override CI defaults).
+
+### Project site (`https://username.github.io/repo-name/`)
+
+Keep the repo name as-is; CI sets `NEXT_PUBLIC_BASE_PATH=/repo-name` automatically.
 
 ## Build
 
