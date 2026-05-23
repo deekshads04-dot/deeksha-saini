@@ -4,10 +4,34 @@ import { useMemo, useState } from "react";
 import type { PostMeta } from "@/types/content";
 import { BlogCard } from "./blog-card";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/utils/cn";
 
 const POSTS_PER_PAGE = 6;
+
+function CategoryChip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        "inline-flex items-center rounded-full border-2 px-2.5 py-0.5 text-xs font-medium transition-colors",
+        active
+          ? "border-accent bg-accent/10 text-accent"
+          : "border-border text-muted-foreground hover:bg-muted",
+      )}
+    >
+      {children}
+    </button>
+  );
+}
 
 interface BlogListProps {
   posts: PostMeta[];
@@ -51,33 +75,26 @@ export function BlogList({ posts, basePath, categories }: BlogListProps) {
           className="sm:max-w-xs"
         />
         <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
+          <CategoryChip
+            active={!category}
             onClick={() => {
               setCategory(null);
               setPage(1);
             }}
-            className={cn(!category && "ring-2 ring-accent ring-offset-2 rounded-full")}
           >
-            <Badge variant={!category ? "default" : "outline"}>All</Badge>
-          </button>
+            All
+          </CategoryChip>
           {categories.map((cat) => (
-            <button
+            <CategoryChip
               key={cat}
-              type="button"
+              active={category === cat}
               onClick={() => {
                 setCategory(cat);
                 setPage(1);
               }}
-              className={cn(
-                category === cat &&
-                  "ring-2 ring-accent ring-offset-2 rounded-full",
-              )}
             >
-              <Badge variant={category === cat ? "default" : "outline"}>
-                {cat}
-              </Badge>
-            </button>
+              {cat}
+            </CategoryChip>
           ))}
         </div>
       </div>
