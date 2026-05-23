@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/site";
 import { socialLinks } from "@/data/socials";
 import { Container } from "./container";
 import { SocialIcon } from "@/components/common/social-icon";
-import { withBasePath } from "@/utils/base-path";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -31,7 +30,7 @@ export function Footer() {
               {footerNavigation.explore.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={withBasePath(item.href)}
+                    href={item.href}
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
                     {item.label}
@@ -47,7 +46,7 @@ export function Footer() {
               {footerNavigation.resources.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={withBasePath(item.href)}
+                    href={item.href}
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
                     {item.label}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Company } from "@/types/company";
-import { withBasePath } from "@/utils/base-path";
 
 interface CompanyCardProps {
   company: Company;
@@ -10,7 +9,7 @@ interface CompanyCardProps {
 export function CompanyCard({ company }: CompanyCardProps) {
   return (
     <Link
-      href={withBasePath(`/experience/${company.slug}/`)}
+      href={`/experience/${company.slug}/`}
       className="group relative block overflow-hidden rounded-2xl border border-border shadow-sm transition-all hover:shadow-xl"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-muted">

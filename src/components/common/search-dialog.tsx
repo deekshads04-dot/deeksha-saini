@@ -108,7 +108,7 @@ export function SearchTrigger() {
               return (
                 <li key={item.id}>
                   <Link
-                    href={withBasePath(item.href)}
+                    href={item.href}
                     onClick={() => setOpen(false)}
                     className="flex items-start gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-muted"
                   >

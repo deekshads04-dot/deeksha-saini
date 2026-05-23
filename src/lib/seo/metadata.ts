@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { defaultSeo } from "@/config/seo";
-import { withBasePath } from "@/utils/base-path";
+import { absoluteUrl } from "@/utils/base-path";
 
 interface PageMetadataOptions {
   title?: string;
@@ -26,10 +26,8 @@ export function createPageMetadata(options: PageMetadataOptions): Metadata {
     tags,
   } = options;
 
-  const url = `${siteConfig.url}${withBasePath(path)}`;
-  const imageUrl = image.startsWith("http")
-    ? image
-    : `${siteConfig.url}${withBasePath(image)}`;
+  const url = absoluteUrl(path);
+  const imageUrl = image.startsWith("http") ? image : absoluteUrl(image);
 
   return {
     title,

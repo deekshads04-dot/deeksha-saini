@@ -2,7 +2,6 @@ import Link from "next/link";
 import { homepageCta } from "@/config/homepage";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { withBasePath } from "@/utils/base-path";
 
 export function CtaSection() {
   return (
@@ -17,12 +16,12 @@ export function CtaSection() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild size="lg">
-              <Link href={withBasePath(homepageCta.primaryCta.href)}>
+              <Link href={homepageCta.primaryCta.href}>
                 {homepageCta.primaryCta.label}
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href={withBasePath(homepageCta.secondaryCta.href)}>
+              <Link href={homepageCta.secondaryCta.href}>
                 {homepageCta.secondaryCta.label}
               </Link>
             </Button>

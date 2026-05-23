@@ -6,7 +6,6 @@ import { YouTubeGrid } from "@/components/portfolio/youtube-grid";
 import { InstagramReelsCarousel } from "@/components/portfolio/instagram-reels-carousel";
 import { InstagramPostsMasonry } from "@/components/portfolio/instagram-posts-masonry";
 import { Container } from "@/components/layout/container";
-import { withBasePath } from "@/utils/base-path";
 
 const sectionRenderers: Record<
   CompanySectionId,
@@ -108,7 +107,7 @@ const sectionRenderers: Record<
             {company.blogs.map((blog) => (
               <li key={blog.slug}>
                 <Link
-                  href={withBasePath(`/blog/${blog.slug}/`)}
+                  href={`/blog/${blog.slug}/`}
                   className="group block rounded-xl border border-border bg-card p-4 transition-shadow hover:shadow-md"
                 >
                   <h3 className="font-medium group-hover:text-accent">

@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { getAllPortfolioItems } from "@/lib/content/portfolio";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { pageSeo } from "@/config/seo";
-import { withBasePath } from "@/utils/base-path";
 
 export const metadata = createPageMetadata({
   title: pageSeo.portfolio.title,
@@ -58,7 +57,7 @@ export default function PortfolioPage() {
               </div>
               {item.companySlug && (
                 <Link
-                  href={withBasePath(`/experience/${item.companySlug}/`)}
+                  href={`/experience/${item.companySlug}/`}
                   className="mt-4 inline-block text-sm font-medium text-accent hover:underline"
                 >
                   View company experience →

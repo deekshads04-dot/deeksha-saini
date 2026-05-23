@@ -4,7 +4,6 @@ import { getFeaturedContent } from "@/lib/content/featured";
 import { SectionHeader } from "@/components/common/section-header";
 import { Container } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
-import { withBasePath } from "@/utils/base-path";
 
 export function FeaturedWritingSection() {
   const { writing } = getFeaturedContent();
@@ -20,7 +19,7 @@ export function FeaturedWritingSection() {
           {writing.map((item) => (
             <Link
               key={item.id}
-              href={withBasePath(item.href)}
+              href={item.href}
               className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-md"
             >
               <div>

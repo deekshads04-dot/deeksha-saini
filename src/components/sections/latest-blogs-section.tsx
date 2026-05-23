@@ -4,7 +4,6 @@ import { SectionHeader } from "@/components/common/section-header";
 import { Container } from "@/components/layout/container";
 import { BlogCard } from "@/components/blog/blog-card";
 import { Button } from "@/components/ui/button";
-import { withBasePath } from "@/utils/base-path";
 
 export function LatestBlogsSection() {
   const { latestBlogs } = getFeaturedContent();
@@ -19,7 +18,7 @@ export function LatestBlogsSection() {
             className="mb-0"
           />
           <Button asChild variant="outline">
-            <Link href={withBasePath("/blog/")}>View All Posts</Link>
+            <Link href="/blog/">View All Posts</Link>
           </Button>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">

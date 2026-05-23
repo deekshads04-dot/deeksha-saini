@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { withBasePath } from "@/utils/base-path";
+import { absoluteUrl } from "@/utils/base-path";
 import type { PostMeta } from "@/types/content";
 
 export function createPersonSchema() {
@@ -10,7 +10,7 @@ export function createPersonSchema() {
     jobTitle: siteConfig.creator.role,
     url: siteConfig.url,
     email: siteConfig.creator.email,
-    image: `${siteConfig.url}${withBasePath(siteConfig.creator.image)}`,
+    image: absoluteUrl(siteConfig.creator.image),
   };
 }
 
@@ -26,10 +26,8 @@ export function createArticleSchema(post: PostMeta, path: string) {
       "@type": "Person",
       name: post.author ?? siteConfig.creator.name,
     },
-    image: post.coverImage
-      ? `${siteConfig.url}${withBasePath(post.coverImage)}`
-      : undefined,
-    url: `${siteConfig.url}${withBasePath(path)}`,
+    image: post.coverImage ? absoluteUrl(post.coverImage) : undefined,
+    url: absoluteUrl(path),
   };
 }
 
@@ -43,7 +41,7 @@ export function createBreadcrumbSchema(
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${siteConfig.url}${withBasePath(item.path)}`,
+      item: absoluteUrl(item.path),
     })),
   };
 }

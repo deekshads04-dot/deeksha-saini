@@ -4,7 +4,6 @@ import { brandsWorkedWith as brandsConfig } from "@/config/homepage";
 import { getFeaturedContent } from "@/lib/content/featured";
 import { SectionHeader } from "@/components/common/section-header";
 import { Container } from "@/components/layout/container";
-import { withBasePath } from "@/utils/base-path";
 
 export function BrandsWorkedWithSection() {
   const { brands } = getFeaturedContent();
@@ -21,7 +20,7 @@ export function BrandsWorkedWithSection() {
           {brands.map((brand) => (
             <Link
               key={brand.slug}
-              href={withBasePath(`/experience/${brand.slug}/`)}
+              href={`/experience/${brand.slug}/`}
               className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-4 transition-shadow hover:shadow-md"
             >
               <div className="relative h-10 w-full">

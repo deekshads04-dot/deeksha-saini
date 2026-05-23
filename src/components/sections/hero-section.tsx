@@ -7,7 +7,6 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
-import { withBasePath } from "@/utils/base-path";
 
 const floatingCards = [
   { label: "50K+ Followers Grown", position: "top-8 right-4 md:right-8" },
@@ -41,13 +40,13 @@ export function HeroSection() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <Link href={withBasePath("/portfolio/")}>
+                <Link href="/portfolio/">
                   View My Work
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href={withBasePath("/contact/")}>Get in Touch</Link>
+                <Link href="/contact/">Get in Touch</Link>
               </Button>
             </div>
           </motion.div>

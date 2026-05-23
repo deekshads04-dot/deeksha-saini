@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { PostMeta } from "@/types/content";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/utils/format";
-import { withBasePath } from "@/utils/base-path";
 
 interface BlogCardProps {
   post: PostMeta;
@@ -11,7 +10,7 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ post, basePath }: BlogCardProps) {
-  const href = withBasePath(`${basePath}/${post.slug}/`);
+  const href = `${basePath}/${post.slug}/`;
 
   return (
     <Link

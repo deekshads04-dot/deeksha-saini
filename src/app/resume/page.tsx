@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { pageSeo } from "@/config/seo";
-import { withBasePath } from "@/utils/base-path";
 
 export const metadata = createPageMetadata({
   title: pageSeo.resume.title,
@@ -42,7 +41,7 @@ export default function ResumePage() {
         <div className="flex flex-col gap-4 lg:sticky lg:top-24">
           <Button asChild size="lg">
             <a
-              href={withBasePath(siteConfig.resume.pdfUrl)}
+              href={siteConfig.resume.pdfUrl}
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -52,12 +51,12 @@ export default function ResumePage() {
             </a>
           </Button>
           <Button asChild variant="outline">
-            <Link href={withBasePath("/contact/")}>Contact Me</Link>
+            <Link href="/contact/">Contact Me</Link>
           </Button>
           <p className="text-sm text-muted-foreground">
             Last updated regularly. For the latest experience, see the{" "}
             <Link
-              href={withBasePath("/experience/")}
+              href="/experience/"
               className="text-accent hover:underline"
             >
               experience page

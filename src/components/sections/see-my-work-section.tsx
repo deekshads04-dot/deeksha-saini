@@ -5,7 +5,6 @@ import { getFeaturedPortfolioItems } from "@/lib/content/portfolio";
 import { SectionHeader } from "@/components/common/section-header";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { withBasePath } from "@/utils/base-path";
 
 export function SeeMyWorkSection() {
   const items = getFeaturedPortfolioItems(3);
@@ -20,7 +19,7 @@ export function SeeMyWorkSection() {
             className="mb-0"
           />
           <Button asChild variant="outline">
-            <Link href={withBasePath(seeMyWork.cta.href)}>{seeMyWork.cta.label}</Link>
+            <Link href={seeMyWork.cta.href}>{seeMyWork.cta.label}</Link>
           </Button>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -29,8 +28,8 @@ export function SeeMyWorkSection() {
               key={item.id}
               href={
                 item.companySlug
-                  ? withBasePath(`/experience/${item.companySlug}/`)
-                  : withBasePath("/portfolio/")
+                  ? `/experience/${item.companySlug}/`
+                  : "/portfolio/"
               }
               className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
             >

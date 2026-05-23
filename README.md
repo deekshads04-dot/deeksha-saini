@@ -59,8 +59,8 @@ sections: ["hero", "achievements", "instagramReels", "blogs"]
    If this is still set to “Deploy from a branch”, the deploy job fails with `404` / “Failed to create deployment”.
 
 2. Copy `.env.example` to `.env.local` and set:
-   - `NEXT_PUBLIC_SITE_URL` — e.g. `https://me4abhi.github.io/deeksha-saini`
-   - `NEXT_PUBLIC_BASE_PATH` — `/deeksha-saini` for project sites (empty for custom domains)
+   - `NEXT_PUBLIC_SITE_URL` — e.g. `https://deekshads04-dot.github.io/deeksha-saini`
+   - `NEXT_PUBLIC_BASE_PATH` — `/deeksha-saini` for project sites (empty for custom domains). Use plain paths in `<Link href="/blog/">`; Next.js adds the base path once.
 
 3. Push to `main` or `development` — the GitHub Action builds `out/` and deploys via `actions/deploy-pages`.
 

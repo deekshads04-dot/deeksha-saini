@@ -11,7 +11,6 @@ import { SearchTrigger } from "@/components/common/search-dialog";
 import { Button } from "@/components/ui/button";
 import { Container } from "./container";
 import { cn } from "@/utils/cn";
-import { withBasePath } from "@/utils/base-path";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -28,7 +27,7 @@ export function Navbar() {
       <Container>
         <nav className="flex h-16 items-center justify-between">
           <Link
-            href={withBasePath("/")}
+            href="/"
             className="text-lg font-semibold tracking-tight"
           >
             {siteConfig.creator.name.split(" ")[0]}
@@ -39,7 +38,7 @@ export function Navbar() {
             {mainNavigation.map((item) => (
               <Link
                 key={item.href}
-                href={withBasePath(item.href)}
+                href={item.href}
                 className={cn(
                   "rounded-full px-3 py-2 text-sm transition-colors hover:bg-muted",
                   isActive(item.href)
@@ -73,7 +72,7 @@ export function Navbar() {
               {mainNavigation.map((item) => (
                 <Link
                   key={item.href}
-                  href={withBasePath(item.href)}
+                  href={item.href}
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-3 py-2 text-sm hover:bg-muted"
                 >
