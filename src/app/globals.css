@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: oklch(0.99 0.002 286);
+  --foreground: oklch(0.15 0.02 286);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 286);
+  --muted: oklch(0.96 0.005 286);
+  --muted-foreground: oklch(0.45 0.02 286);
+  --border: oklch(0.92 0.01 286);
+  --accent: oklch(0.55 0.2 286);
+  --accent-foreground: oklch(0.99 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0.015 286);
+  --foreground: oklch(0.95 0.01 286);
+  --card: oklch(0.16 0.015 286);
+  --card-foreground: oklch(0.95 0.01 286);
+  --muted: oklch(0.18 0.015 286);
+  --muted-foreground: oklch(0.65 0.02 286);
+  --border: oklch(0.25 0.02 286);
+  --accent: oklch(0.7 0.18 286);
+  --accent-foreground: oklch(0.12 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+.prose-custom pre code {
+  @apply bg-transparent p-0;
+}

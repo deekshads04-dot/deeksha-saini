@@ -1,0 +1,54 @@
+[
+  {
+    "id": "blog-anatomy-of-high-converting-landing-page",
+    "type": "blog",
+    "title": "The Anatomy of a High-Converting Landing Page",
+    "description": "How structure, hierarchy, and microcopy work together to turn visitors into customers.",
+    "href": "/blog/anatomy-of-high-converting-landing-page/",
+    "tags": [
+      "copywriting",
+      "conversion",
+      "web"
+    ],
+    "category": "Copywriting"
+  },
+  {
+    "id": "blog-instagram-reels-that-drive-sales",
+    "type": "blog",
+    "title": "Instagram Reels That Actually Drive Sales",
+    "description": "A practical framework for content that converts, not just entertains.",
+    "href": "/blog/instagram-reels-that-drive-sales/",
+    "tags": [
+      "instagram",
+      "reels",
+      "social-media"
+    ],
+    "category": "Social Media"
+  },
+  {
+    "id": "blog-glow-labs-instagram-launch",
+    "type": "blog",
+    "title": "How We Launched Glow Labs on Instagram",
+    "description": "Strategy breakdown of our 0-to-50K growth journey in six months.",
+    "href": "/blog/glow-labs-instagram-launch/",
+    "tags": [
+      "case-study",
+      "instagram",
+      "launch"
+    ],
+    "category": "Strategy"
+  },
+  {
+    "id": "case-brand-voice-workshop",
+    "type": "case-study",
+    "title": "Brand Voice Workshop: Finding Your Tone",
+    "description": "How a two-day workshop unlocked consistent messaging across every channel.",
+    "href": "/case-studies/brand-voice-workshop/",
+    "tags": [
+      "branding",
+      "workshop",
+      "voice"
+    ],
+    "category": "Branding"
+  }
+]
