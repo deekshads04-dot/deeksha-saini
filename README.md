@@ -66,7 +66,7 @@ GitHub only serves a site at the **account root** when the repository is named *
    - `NEXT_PUBLIC_BASE_PATH=` (empty)
 4. Push to `main` or `development` — CI detects a user site and builds without a base path.
 
-Optional repo variables: `SITE_URL`, `BASE_PATH` (override CI defaults).
+Optional repo variable: `SITE_URL` (custom domain only). **Delete** any `BASE_PATH` variable — it forces old `/deeksha-saini` links after a repo rename.
 
 ### Project site (`https://username.github.io/repo-name/`)
 
