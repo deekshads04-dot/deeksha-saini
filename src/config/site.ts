@@ -11,7 +11,7 @@ export const siteConfig = {
     bio: "I help brands find their voice, grow their audience, and tell stories that resonate across Instagram, YouTube, and beyond.",
     image: "/images/creator-hero.svg",
     location: "India",
-    email: "hello@deekshasaini.com",
+    email: "deeksha.ds.04@gmail.com",
   },
   resume: {
     pdfUrl: "/resume/deeksha-saini-resume.pdf",
