@@ -1,7 +1,7 @@
 export const contactConfig = {
   title: "Get in Touch",
   subtitle: "Have a project in mind? I'd love to hear about it.",
-  email: "hello@deekshasaini.com",
+  email: "deeksha.ds.04@gmail.com",
   responseTime: "Usually responds within 24–48 hours",
   form: {
     enabled: false,
